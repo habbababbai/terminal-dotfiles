@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+# Make zsh the login shell (macOS already defaults to zsh).
+set -euo pipefail
+zsh_path="$(command -v zsh)"
+if [ "$(getent passwd "$USER" | cut -d: -f7)" != "$zsh_path" ]; then
+  echo "→ Setting login shell to $zsh_path (asks for your password)"
+  chsh -s "$zsh_path"
+fi
+{{ end -}}

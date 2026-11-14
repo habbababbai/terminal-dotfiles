@@ -1,0 +1,20 @@
+#!/bin/bash
+# brew bundle. chezmoi re-runs this whenever a hash below changes, i.e. when
+# a Brewfile is edited or the extras answer flips.
+#   Brewfile        {{ include (joinPath .chezmoi.workingTree "packages/Brewfile") | sha256sum }}
+{{- if .extras }}
+#   Brewfile.extras {{ include (joinPath .chezmoi.workingTree "packages/Brewfile.extras") | sha256sum }}
+{{- end }}
+set -euo pipefail
+
+for b in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+  [ -x "$b" ] && eval "$("$b" shellenv)" && break
+done
+
+echo "→ brew bundle (core)"
+brew bundle --file={{ joinPath .chezmoi.workingTree "packages/Brewfile" | quote }}
+{{- if .extras }}
+
+echo "→ brew bundle (extras)"
+brew bundle --file={{ joinPath .chezmoi.workingTree "packages/Brewfile.extras" | quote }}
+{{- end }}

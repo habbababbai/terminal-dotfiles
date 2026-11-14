@@ -1,0 +1,16 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+# Ghostty on Linux. macOS gets it from the Brewfile cask.
+# Upstream packaging changes often — see https://ghostty.org/docs/install/binary
+set -euo pipefail
+if command -v ghostty >/dev/null 2>&1; then
+  exit 0
+fi
+if command -v snap >/dev/null 2>&1; then
+  echo "→ Installing Ghostty via snap (sudo)"
+  sudo snap install ghostty --classic
+else
+  echo "!! Ghostty not installed and snap unavailable." >&2
+  echo "   Install manually: https://ghostty.org/docs/install/binary" >&2
+fi
+{{ end -}}

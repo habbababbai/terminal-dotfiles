@@ -1,0 +1,21 @@
+{
+    "colorscheme": "catpuccin-mocha-transparent",
+    "*.jsx": {
+        "filetype": "javascript"
+    },
+    "*.sass": {
+        "filetype": "css"
+    },
+    "*.jsonc": {
+        "filetype": "json"
+    },
+    "*.mdx": {
+        "filetype": "markdown"
+    },
+    "*.env": {
+        "filetype": "shell"
+    },
+    "*/.env*": {
+        "filetype": "shell"
+    }
+}

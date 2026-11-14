@@ -1,0 +1,30 @@
+#!/bin/bash
+# FiraCode Nerd Font (used by Ghostty). Skips if any FiraCode Nerd Font is present,
+# so a hand-installed copy is left alone.
+set -euo pipefail
+
+{{ if eq .chezmoi.os "darwin" -}}
+shopt -s nullglob nocaseglob
+existing=("$HOME"/Library/Fonts/FiraCodeNerdFont* /Library/Fonts/FiraCodeNerdFont*)
+if (( ${#existing[@]} )); then
+  exit 0
+fi
+for b in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+  [ -x "$b" ] && eval "$("$b" shellenv)" && break
+done
+echo "→ Installing FiraCode Nerd Font (brew cask)"
+brew install --cask font-fira-code-nerd-font
+{{- else if eq .chezmoi.os "linux" -}}
+if fc-list : family 2>/dev/null | grep -i 'FiraCode Nerd Font' >/dev/null; then
+  exit 0
+fi
+dest="${XDG_DATA_HOME:-$HOME/.local/share}/fonts/FiraCodeNerdFont"
+tmp="$(mktemp -d)"
+trap 'rm -rf "$tmp"' EXIT
+echo "→ Installing FiraCode Nerd Font to $dest"
+curl -fsSL -o "$tmp/FiraCode.tar.xz" \
+  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz
+mkdir -p "$dest"
+tar -xJf "$tmp/FiraCode.tar.xz" -C "$dest"
+fc-cache -f "$dest" >/dev/null
+{{- end }}

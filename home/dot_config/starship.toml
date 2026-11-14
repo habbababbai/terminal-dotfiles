@@ -1,0 +1,114 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Tokyo Night preset (https://starship.rs/presets/tokyo-night), recolored to
+# match the live Ghostty theme (~/.config/ghostty/themes/GitHub-Dark-Colorblind)
+# instead of the preset's own blue palette. Structure/format left untouched;
+# only hex values changed:
+#   #a3aed2 -> #b1bac4  (ansi white   - light neutral, os segment)
+#   #090c0c -> #0d1117  (background   - near-black text on light bg)
+#   #769ff0 -> #58a6ff  (ansi blue    - accent, = cursor-color)
+#   #e3e5e5 -> #ffffff  (bright white - text on accent bg)
+#   #394260 -> #6e7681  (bright black - neutral dark, git segment)
+#   #212736 -> #484f58  (ansi black   - neutral darker, lang segment)
+#   #1d2230 -> #0d1117  (background   - darkest, time segment)
+#   #a0a9cb -> #c9d1d9  (foreground   - muted text, time segment)
+
+format = """
+[░▒▓](#b1bac4)\
+$os\
+[](bg:#58a6ff fg:#b1bac4)\
+$directory\
+[](fg:#58a6ff bg:#6e7681)\
+$git_branch\
+$git_status\
+[](fg:#6e7681 bg:#484f58)\
+$nodejs\
+$bun\
+$rust\
+$golang\
+$php\
+[](fg:#484f58 bg:#0d1117)\
+$time\
+[ ](fg:#0d1117)\
+\n$character"""
+
+[directory]
+style = "fg:#ffffff bg:#58a6ff"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#6e7681"
+format = '[[ $symbol $branch ](fg:#58a6ff bg:#6e7681)]($style)'
+
+[git_status]
+style = "bg:#6e7681"
+format = '[[($all_status$ahead_behind )](fg:#58a6ff bg:#6e7681)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#484f58"
+format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+
+[bun]
+symbol = ""
+style = "bg:#484f58"
+format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#484f58"
+format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+
+[golang]
+symbol = "ﳑ"
+style = "bg:#484f58"
+format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#484f58"
+format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#0d1117"
+format = '[[  $time ](fg:#c9d1d9 bg:#0d1117)]($style)'
+
+[os]
+style = "bg:#b1bac4 fg:#0d1117"
+format = "[ $symbol ]($style)"
+disabled = false
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""

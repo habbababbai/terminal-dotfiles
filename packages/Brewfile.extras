@@ -1,0 +1,36 @@
+# Optional CLI extras — installed only when you answer "yes" to the extras
+# prompt during `chezmoi init` (re-ask: `chezmoi init --prompt`).
+#   manual:  brew bundle --file=packages/Brewfile.extras
+
+# Files, disks, processes
+brew "dust"          # du, visual
+brew "duf"           # df, visual
+brew "procs"         # ps, modern
+brew "bottom"        # system monitor (btm)
+brew "htop"
+brew "yazi"          # terminal file manager
+
+# Text & data
+brew "sd"            # sed, intuitive
+brew "yq"            # jq for YAML/JSON/TOML
+brew "fx"            # interactive JSON viewer
+brew "jless"         # JSON pager
+brew "glow"          # markdown in the terminal
+brew "difftastic"    # structural diff
+brew "ast-grep"      # structural code search
+brew "typos-cli"     # spell-check source code
+
+# Network & HTTP
+brew "xh"            # httpie-style requests
+brew "doggo"         # dig, modern
+brew "trippy"        # traceroute + ping TUI
+
+# Dev workflow
+brew "just"          # command runner
+brew "watchexec"     # run on file change
+brew "hyperfine"     # benchmarking
+brew "tldr"          # short man pages
+brew "navi"          # interactive cheatsheets
+brew "television"    # fuzzy finder TUI
+brew "uv"            # python package manager
+brew "fastfetch"     # system info

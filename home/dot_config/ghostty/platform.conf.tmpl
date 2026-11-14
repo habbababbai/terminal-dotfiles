@@ -1,0 +1,22 @@
+# Ghostty per-OS settings — rendered by chezmoi for {{ .chezmoi.os }}.
+# Loaded by `config-file = ?platform.conf` at the end of ./config.
+# Edit the template in the repo: home/dot_config/ghostty/platform.conf.tmpl
+{{ if eq .chezmoi.os "darwin" }}
+macos-option-as-alt = true
+background-opacity = 0.95
+background-blur = 12
+
+# "transparent" keeps the native titlebar (traffic lights top-left) but lets the
+# terminal background through, so the bar matches the window.
+macos-titlebar-style = transparent
+macos-window-buttons = visible
+
+# Restore window size/position across restarts.
+window-save-state = always
+{{- else if eq .chezmoi.os "linux" }}
+background-opacity = 0.95
+
+# background-blur is honored on macOS and KDE Plasma (KWin's blur effect, enabled
+# system-wide), but not on stock GNOME. Uncomment on KDE:
+# background-blur = true
+{{- end }}

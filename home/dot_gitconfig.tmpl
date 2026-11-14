@@ -1,0 +1,17 @@
+# ~/.gitconfig — managed by chezmoi. Identity comes from `chezmoi init` prompts,
+# so no personal data lives in the repo. Machine-specific extras (e.g. includeIf
+# rules routing work directories to a work identity) go in ~/.config/git/local.
+# Global ignores: ~/.config/git/ignore (git's default XDG location).
+
+[user]
+	name = {{ .name }}
+	email = {{ .email }}
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[include]
+	path = ~/.config/git/local

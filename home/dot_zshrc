@@ -1,0 +1,11 @@
+# ~/.zshrc — managed by chezmoi (github.com/habbababbai/terminal-dotfiles).
+# Edit with `chezmoi edit ~/.zshrc` or in the repo, then `chezmoi apply`.
+#
+# All real config lives in ~/.config/zsh/NN-*.zsh, loaded in numeric order:
+#   00-path  10-omz  20-tools  30-aliases  40-functions  50-colors  99-local
+# Machine-specific bits go in ~/.config/zsh/local.zsh (never committed).
+
+for _zf in "$HOME"/.config/zsh/[0-9][0-9]-*.zsh(N); do
+  source "$_zf"
+done
+unset _zf

@@ -1,0 +1,30 @@
+# Core terminal stack — macOS and Linux (Homebrew on Linux).
+# Installed by home/.chezmoiscripts/run_onchange_before_10-packages.sh.tmpl,
+# which re-runs whenever this file changes.
+#   manual:  brew bundle --file=packages/Brewfile
+
+# Prompt, history, navigation
+brew "starship"
+brew "atuin"
+brew "zoxide"
+brew "fzf"
+
+# Modern core utils (used by aliases and fzf previews)
+brew "eza"
+brew "bat"
+brew "fd"
+brew "ripgrep"
+
+# Editor, git, multiplexer
+brew "micro"
+brew "neovim"
+brew "gh"
+brew "git-lfs"
+brew "lazygit"
+brew "tmux"
+
+# Runtime manager (node etc. — see ~/.config/mise/config.toml)
+brew "mise"
+
+# Terminal (Linux: installed separately, see run_once_after_25-ghostty-linux)
+cask "ghostty" if OS.mac?

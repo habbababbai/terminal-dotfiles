@@ -1,0 +1,19 @@
+{{- /*
+  Per-machine chezmoi config. Rendered once by `chezmoi init`; answers are
+  stored in ~/.config/chezmoi/chezmoi.toml and never committed.
+  Re-ask with: chezmoi init --prompt
+*/ -}}
+{{- $name  := promptStringOnce . "name"  "Git author name" -}}
+{{- $email := promptStringOnce . "email" "Git author email (default identity on this machine)" -}}
+{{- $extras := promptBoolOnce . "extras" "Install extra CLI tools (packages/Brewfile.extras)" false -}}
+
+{{/* repo root, not home/ (.chezmoiroot) */ -}}
+sourceDir = {{ .chezmoi.workingTree | quote }}
+
+[data]
+    name   = {{ $name | quote }}
+    email  = {{ $email | quote }}
+    extras = {{ $extras }}
+
+[diff]
+    exclude = ["scripts"]

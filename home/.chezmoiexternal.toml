@@ -1,0 +1,51 @@
+# oh-my-zsh and its custom plugins, cloned on first `chezmoi apply` and pulled
+# again once refreshPeriod has elapsed (or force with `chezmoi update -R`).
+
+[".oh-my-zsh"]
+    type = "git-repo"
+    url = "https://github.com/ohmyzsh/ohmyzsh.git"
+    refreshPeriod = "168h"
+    clone.args = ["--depth", "1"]
+    pull.args = ["--ff-only"]
+
+[".oh-my-zsh/custom/plugins/zsh-completions"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-completions.git"
+    refreshPeriod = "168h"
+    clone.args = ["--depth", "1"]
+
+[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-autosuggestions.git"
+    refreshPeriod = "168h"
+    clone.args = ["--depth", "1"]
+
+[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    refreshPeriod = "168h"
+    clone.args = ["--depth", "1"]
+
+[".oh-my-zsh/custom/plugins/fzf-tab"]
+    type = "git-repo"
+    url = "https://github.com/Aloxaf/fzf-tab.git"
+    refreshPeriod = "168h"
+    clone.args = ["--depth", "1"]
+
+[".oh-my-zsh/custom/plugins/zsh-shift-select"]
+    type = "git-repo"
+    url = "https://github.com/jirutka/zsh-shift-select.git"
+    refreshPeriod = "168h"
+    clone.args = ["--depth", "1"]
+
+[".oh-my-zsh/custom/plugins/zsh-you-should-use"]
+    type = "git-repo"
+    url = "https://github.com/MichaelAquilina/zsh-you-should-use.git"
+    refreshPeriod = "168h"
+    clone.args = ["--depth", "1"]
+
+[".oh-my-zsh/custom/plugins/forgit"]
+    type = "git-repo"
+    url = "https://github.com/wfxr/forgit.git"
+    refreshPeriod = "168h"
+    clone.args = ["--depth", "1"]

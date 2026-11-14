@@ -1,0 +1,10 @@
+# Targets chezmoi must not manage on a given OS. Paths are relative to $HOME.
+# This file is a template, so .chezmoi.os is available.
+
+{{- if ne .chezmoi.os "darwin" }}
+# macOS-only targets go here
+{{- end }}
+
+{{- if ne .chezmoi.os "linux" }}
+# Linux-only targets go here
+{{- end }}

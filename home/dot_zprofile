@@ -1,0 +1,13 @@
+# ~/.zprofile — login shells only. Homebrew goes on PATH here, once.
+# Everything interactive lives in ~/.zshrc → ~/.config/zsh/.
+
+if [[ -x /opt/homebrew/bin/brew ]]; then                  # macOS, Apple Silicon
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then                   # macOS, Intel
+  eval "$(/usr/local/bin/brew shellenv)"
+elif [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then   # Linux
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+# OrbStack (macOS) — no-op when absent
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
