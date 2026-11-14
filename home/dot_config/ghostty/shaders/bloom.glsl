@@ -48,7 +48,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     // Screen blend instead of straight addition. At this intensity plain
     // addition drives bright glyphs past 1.0 and clips them to flat white,
-    // which throws away the Rose Pine hues; screening approaches 1.0 without
+    // which throws away the theme's hues; screening approaches 1.0 without
     // ever overshooting, so strong glow keeps its color.
     vec3 added = glow * INTENSITY;
 

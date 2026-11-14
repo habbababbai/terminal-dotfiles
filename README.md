@@ -79,6 +79,20 @@ never touched again. It holds anything specific to that machine or personal: pat
 env vars, hosts, account helpers. Git can likewise pull in `~/.config/git/local` for
 per-machine `includeIf` identity rules. Neither file is tracked.
 
+## Credits
+
+- **GitHub Dark Colorblind** Ghostty theme: colours from GitHub's
+  [Primer](https://primer.style/) palette, via
+  [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) (MIT)
+- **Starship prompt**: the [Tokyo Night preset](https://starship.rs/presets/tokyo-night)
+  from [Starship](https://github.com/starship/starship) (ISC), recoloured to match the theme
+- **micro colour scheme**: [Catppuccin](https://github.com/catppuccin/catppuccin) Mocha palette (MIT)
+- **zsh**: [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and the plugins listed in
+  [`.chezmoiexternal.toml`](home/.chezmoiexternal.toml), cloned at install time and
+  not redistributed here
+- **Font**: [FiraCode](https://github.com/tonsky/FiraCode), patched by
+  [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) (OFL-1.1), downloaded at install time
+
 ## License
 
-MIT
+MIT. Third-party pieces listed above keep their own licenses.
