@@ -7,9 +7,10 @@
 #   #a3aed2 -> #c9d1d9  (cursor-color - light neutral, os segment)
 #   #090c0c -> #101216  (background   - near-black text on light bg)
 #   #769ff0 -> #6ca4f8  (ansi blue    - accent)
-#   #e3e5e5 -> #ffffff  (ansi white   - text on accent bg)
+#   #e3e5e5 -> #101216  (background   - dark text on accent bg, 7.4:1)
+#   (git text)  #ffffff  (ansi white   - text on git segment, 8.2:1)
 #   #394260 -> #3b5070  (selection-bg - blue-grey, git segment)
-#   #212736 -> #21262d  (GitHub UI neutral - darker, lang segment)
+#   #212736 -> #30363d  (GitHub UI border - darker, lang segment)
 #   #1d2230 -> #101216  (background   - darkest, time segment)
 #   #a0a9cb -> #8b949e  (foreground   - muted text, time segment)
 
@@ -21,19 +22,19 @@ $directory\
 [](fg:#6ca4f8 bg:#3b5070)\
 $git_branch\
 $git_status\
-[](fg:#3b5070 bg:#21262d)\
+[](fg:#3b5070 bg:#30363d)\
 $nodejs\
 $bun\
 $rust\
 $golang\
 $php\
-[](fg:#21262d bg:#101216)\
+[](fg:#30363d bg:#101216)\
 $time\
 [ ](fg:#101216)\
 \n$character"""
 
 [directory]
-style = "fg:#ffffff bg:#6ca4f8"
+style = "fg:#101216 bg:#6ca4f8"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -47,36 +48,36 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:#3b5070"
-format = '[[ $symbol $branch ](fg:#6ca4f8 bg:#3b5070)]($style)'
+format = '[[ $symbol $branch ](fg:#ffffff bg:#3b5070)]($style)'
 
 [git_status]
 style = "bg:#3b5070"
-format = '[[($all_status$ahead_behind )](fg:#6ca4f8 bg:#3b5070)]($style)'
+format = '[[($all_status$ahead_behind )](fg:#ffffff bg:#3b5070)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#21262d"
-format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
+style = "bg:#30363d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#30363d)]($style)'
 
 [bun]
 symbol = ""
-style = "bg:#21262d"
-format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
+style = "bg:#30363d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#30363d)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#21262d"
-format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
+style = "bg:#30363d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#30363d)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:#21262d"
-format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
+style = "bg:#30363d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#30363d)]($style)'
 
 [php]
 symbol = ""
-style = "bg:#21262d"
-format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
+style = "bg:#30363d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#30363d)]($style)'
 
 [time]
 disabled = false
