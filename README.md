@@ -1,15 +1,15 @@
 # terminal-dotfiles
 
-My terminal setup: **Ghostty + zsh + oh-my-zsh + Starship**, kept in sync between macOS
+My terminal setup: **Ghostty + zsh + oh-my-zsh**, kept in sync between macOS
 and Ubuntu with [chezmoi](https://www.chezmoi.io/).
 
 | | |
 |---|---|
 | Terminal | [Ghostty](https://ghostty.org): custom GLSL shader chain (cursor smear → bloom → unfocused dim) |
-| Theme | GitHub Dark across Ghostty, Starship, micro, fzf and bat |
+| Theme | GitHub Dark across Ghostty, the prompt, micro, fzf and bat |
 | Font | FiraCode Nerd Font Mono |
 | Shell | zsh + oh-my-zsh, with fzf-tab, autosuggestions, syntax-highlighting, forgit, you-should-use, … |
-| Prompt | [Starship](https://starship.rs): Tokyo Night layout, recoloured |
+| Prompt | oh-my-zsh [agnoster](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster), recoloured to GitHub Dark (`10-omz.zsh`) |
 | History | [atuin](https://atuin.sh) on <kbd>Ctrl</kbd>+<kbd>R</kbd> |
 | CLI | fzf (fd + bat preview), zoxide, eza, bat, ripgrep, lazygit, micro, mise |
 
@@ -65,7 +65,6 @@ chezmoi cd                # open a shell in the repo (commit & push from there)
     └── dot_config/
         ├── zsh/               00-path 10-omz 20-tools 30-aliases 40-functions 50-colors 99-local
         ├── ghostty/           config, platform.conf.tmpl (per-OS), shaders/, themes/
-        ├── starship.toml
         ├── private_atuin/  mise/  micro/  git/
 ```
 
@@ -84,8 +83,6 @@ per-machine `includeIf` identity rules. Neither file is tracked.
 - **GitHub Dark** Ghostty theme: colours from GitHub's
   [Primer](https://primer.style/) palette, via
   [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) (MIT)
-- **Starship prompt**: the [Tokyo Night preset](https://starship.rs/presets/tokyo-night)
-  from [Starship](https://github.com/starship/starship) (ISC), recoloured to match the theme
 - **micro colour scheme**: hand-mapped from the GitHub Dark theme above
 - **zsh**: [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and the plugins listed in
   [`.chezmoiexternal.toml`](home/.chezmoiexternal.toml), cloned at install time and

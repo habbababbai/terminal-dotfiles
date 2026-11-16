@@ -4,7 +4,6 @@
 (( $+commands[rbenv] ))    && eval "$(rbenv init - --no-rehash zsh)"
 (( $+commands[mise] ))     && eval "$(mise activate zsh)"
 (( $+commands[zoxide] ))   && eval "$(zoxide init zsh)"
-(( $+commands[starship] )) && eval "$(starship init zsh)"
 [[ -s "$BUN_INSTALL/_bun" ]] && source "$BUN_INSTALL/_bun"
 
 # bat — "ansi" draws with the terminal's 16 colours, so it follows the Ghostty theme

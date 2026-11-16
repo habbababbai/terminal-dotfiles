@@ -4,7 +4,6 @@
 #   manual:  brew bundle --file=packages/Brewfile
 
 # Prompt, history, navigation
-brew "starship"
 brew "atuin"
 brew "zoxide"
 brew "fzf"
