@@ -1,0 +1,48 @@
+# GitHub Dark for micro — colours from the Ghostty "GitHub Dark" theme
+# (ghostty/themes/GitHub-Dark). No background is set on `default`, so the
+# terminal's own background (and its opacity/blur) shows through.
+color-link default "#c9d1d9"
+color-link comment "#8b949e"
+color-link selection "#ffffff,#3b5070"
+color-link hlsearch "#101216,#e3b341"
+
+color-link identifier "#6ca4f8"
+color-link identifier.class "#e3b341"
+color-link identifier.var "#6ca4f8"
+
+color-link constant "#79c0ff"
+color-link constant.number "#79c0ff"
+color-link constant.string "#a5d6ff"
+
+color-link symbol "#f78166"
+color-link symbol.brackets "#c9d1d9"
+color-link symbol.tag "#56d364"
+
+color-link type "#e3b341"
+color-link type.keyword "#f78166"
+
+color-link special "#db61a2"
+color-link statement "#f78166"
+color-link preproc "#db61a2"
+
+color-link underlined "#6ca4f8"
+color-link error "bold #f78166"
+color-link todo "bold #e3b341"
+
+color-link diff-added "#56d364"
+color-link diff-modified "#e3b341"
+color-link diff-deleted "#f78166"
+
+color-link gutter-error "#f78166"
+color-link gutter-warning "#e3b341"
+
+color-link scrollbar "#4d4d4d"
+color-link statusline "#c9d1d9,#21262d"
+color-link tabbar "#c9d1d9,#21262d"
+color-link indent-char "#30363d"
+color-link line-number "#4d4d4d"
+color-link current-line-number "#c9d1d9"
+
+color-link cursor-line "#161b22"
+color-link color-column "#161b22"
+color-link type.extended "default"

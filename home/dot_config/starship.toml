@@ -1,39 +1,39 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Tokyo Night preset (https://starship.rs/presets/tokyo-night), recolored to
-# match the live Ghostty theme (~/.config/ghostty/themes/GitHub-Dark-Colorblind)
+# match the live Ghostty theme (~/.config/ghostty/themes/GitHub-Dark)
 # instead of the preset's own blue palette. Structure/format left untouched;
 # only hex values changed:
-#   #a3aed2 -> #b1bac4  (ansi white   - light neutral, os segment)
-#   #090c0c -> #0d1117  (background   - near-black text on light bg)
-#   #769ff0 -> #58a6ff  (ansi blue    - accent, = cursor-color)
-#   #e3e5e5 -> #ffffff  (bright white - text on accent bg)
-#   #394260 -> #6e7681  (bright black - neutral dark, git segment)
-#   #212736 -> #484f58  (ansi black   - neutral darker, lang segment)
-#   #1d2230 -> #0d1117  (background   - darkest, time segment)
-#   #a0a9cb -> #c9d1d9  (foreground   - muted text, time segment)
+#   #a3aed2 -> #c9d1d9  (cursor-color - light neutral, os segment)
+#   #090c0c -> #101216  (background   - near-black text on light bg)
+#   #769ff0 -> #6ca4f8  (ansi blue    - accent)
+#   #e3e5e5 -> #ffffff  (ansi white   - text on accent bg)
+#   #394260 -> #3b5070  (selection-bg - blue-grey, git segment)
+#   #212736 -> #21262d  (GitHub UI neutral - darker, lang segment)
+#   #1d2230 -> #101216  (background   - darkest, time segment)
+#   #a0a9cb -> #8b949e  (foreground   - muted text, time segment)
 
 format = """
-[░▒▓](#b1bac4)\
+[░▒▓](#c9d1d9)\
 $os\
-[](bg:#58a6ff fg:#b1bac4)\
+[](bg:#6ca4f8 fg:#c9d1d9)\
 $directory\
-[](fg:#58a6ff bg:#6e7681)\
+[](fg:#6ca4f8 bg:#3b5070)\
 $git_branch\
 $git_status\
-[](fg:#6e7681 bg:#484f58)\
+[](fg:#3b5070 bg:#21262d)\
 $nodejs\
 $bun\
 $rust\
 $golang\
 $php\
-[](fg:#484f58 bg:#0d1117)\
+[](fg:#21262d bg:#101216)\
 $time\
-[ ](fg:#0d1117)\
+[ ](fg:#101216)\
 \n$character"""
 
 [directory]
-style = "fg:#ffffff bg:#58a6ff"
+style = "fg:#ffffff bg:#6ca4f8"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -46,46 +46,46 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#6e7681"
-format = '[[ $symbol $branch ](fg:#58a6ff bg:#6e7681)]($style)'
+style = "bg:#3b5070"
+format = '[[ $symbol $branch ](fg:#6ca4f8 bg:#3b5070)]($style)'
 
 [git_status]
-style = "bg:#6e7681"
-format = '[[($all_status$ahead_behind )](fg:#58a6ff bg:#6e7681)]($style)'
+style = "bg:#3b5070"
+format = '[[($all_status$ahead_behind )](fg:#6ca4f8 bg:#3b5070)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#484f58"
-format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+style = "bg:#21262d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
 
 [bun]
 symbol = ""
-style = "bg:#484f58"
-format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+style = "bg:#21262d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#484f58"
-format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+style = "bg:#21262d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:#484f58"
-format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+style = "bg:#21262d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
 
 [php]
 symbol = ""
-style = "bg:#484f58"
-format = '[[ $symbol ($version) ](fg:#58a6ff bg:#484f58)]($style)'
+style = "bg:#21262d"
+format = '[[ $symbol ($version) ](fg:#6ca4f8 bg:#21262d)]($style)'
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#0d1117"
-format = '[[  $time ](fg:#c9d1d9 bg:#0d1117)]($style)'
+style = "bg:#101216"
+format = '[[  $time ](fg:#8b949e bg:#101216)]($style)'
 
 [os]
-style = "bg:#b1bac4 fg:#0d1117"
+style = "bg:#c9d1d9 fg:#101216"
 format = "[ $symbol ]($style)"
 disabled = false
 

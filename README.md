@@ -6,7 +6,7 @@ and Ubuntu with [chezmoi](https://www.chezmoi.io/).
 | | |
 |---|---|
 | Terminal | [Ghostty](https://ghostty.org): custom GLSL shader chain (cursor smear → bloom → unfocused dim) |
-| Theme | GitHub Dark Colorblind across Ghostty, Starship and `LS_COLORS` |
+| Theme | GitHub Dark across Ghostty, Starship, micro, fzf and bat |
 | Font | FiraCode Nerd Font Mono |
 | Shell | zsh + oh-my-zsh, with fzf-tab, autosuggestions, syntax-highlighting, forgit, you-should-use, … |
 | Prompt | [Starship](https://starship.rs): Tokyo Night layout, recoloured |
@@ -81,12 +81,12 @@ per-machine `includeIf` identity rules. Neither file is tracked.
 
 ## Credits
 
-- **GitHub Dark Colorblind** Ghostty theme: colours from GitHub's
+- **GitHub Dark** Ghostty theme: colours from GitHub's
   [Primer](https://primer.style/) palette, via
   [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) (MIT)
 - **Starship prompt**: the [Tokyo Night preset](https://starship.rs/presets/tokyo-night)
   from [Starship](https://github.com/starship/starship) (ISC), recoloured to match the theme
-- **micro colour scheme**: [Catppuccin](https://github.com/catppuccin/catppuccin) Mocha palette (MIT)
+- **micro colour scheme**: hand-mapped from the GitHub Dark theme above
 - **zsh**: [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and the plugins listed in
   [`.chezmoiexternal.toml`](home/.chezmoiexternal.toml), cloned at install time and
   not redistributed here

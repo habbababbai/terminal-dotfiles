@@ -1,4 +1,4 @@
-# 50-colors — GitHub-Dark palette for ls/eza (eza reads LS_COLORS unless EZA_COLORS is set).
+# 50-colors — 256-colour palette (blues/greens/oranges in the GitHub Dark spirit) for ls/eza (eza reads LS_COLORS unless EZA_COLORS is set).
 
 LS_COLORS='
 di=38;5;33:
